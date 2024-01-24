@@ -1,6 +1,6 @@
 id: net.mkiol.SpeechNote.Addon.amd
 runtime: net.mkiol.SpeechNote
-runtime-version: beta
+runtime-version: stable
 sdk: org.kde.Sdk//5.15-22.08
 build-extension: true
 appstream-compose: false
@@ -19,7 +19,7 @@ modules:
       - mkdir rocm_src
       - |
         set -e
-        for f in *.deb; do 
+        for f in *.deb; do
           if [ -f "$f" ]; then
             mv "$f" rocm_src
             cd rocm_src
@@ -373,7 +373,7 @@ modules:
       - type: file
         url: https://download.pytorch.org/whl/pytorch_triton_rocm-2.1.0-cp310-cp310-linux_x86_64.whl
         sha256: 12fbf2ded4e5efcab0ff9ecc2de17f667dc4ef0a8a952ab9b549344ca4feb19e
-        
+
   - name: metadata
     buildsystem: simple
     build-commands:
