@@ -1,6 +1,6 @@
 id: net.mkiol.SpeechNote.Addon.amd
 runtime: net.mkiol.SpeechNote
-runtime-version: beta
+runtime-version: stable
 sdk: org.kde.Sdk//5.15-23.08
 build-extension: true
 build-options:
@@ -374,3 +374,11 @@ modules:
       - type: file
         url: https://download.pytorch.org/whl/pytorch_triton_rocm-2.2.0-cp311-cp311-linux_x86_64.whl
         sha256: f8ac03d7e4114bd37c3ed1f98d84cdb15f1b1c5b3c0ecac305ada0d683520b9d
+
+  - name: metadata
+    buildsystem: simple
+    build-commands:
+      - install -Dm644 -t ${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml
+    sources:
+      - type: file
+        path: net.mkiol.SpeechNote.Addon.amd.metainfo.xml
