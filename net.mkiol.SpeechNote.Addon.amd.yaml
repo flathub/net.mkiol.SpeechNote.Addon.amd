@@ -157,7 +157,7 @@ modules:
               cd "$tmp"/
               ar x "$f"
               rm -rf "$f"
-              tar -xf data.tar.* -C ../
+              tar -xf data.tar.* -C ../ --no-same-owner --no-same-permissions
               cd ..
               rm -rf "$tmp"
             done
